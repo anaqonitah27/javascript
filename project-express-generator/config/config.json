@@ -1,0 +1,13 @@
+
+{ 
+  "utilitykjyn": {
+    "username": "root",
+    "password": "",
+    "database": "utilitykjyn",
+    "host": "localhost",
+    "port": "3306",
+    "timezone": "+07:00",
+    "dialect": "mysql",
+    "logging": false
+  }
+}
