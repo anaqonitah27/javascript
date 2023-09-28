@@ -1,8 +1,8 @@
-const { utilKjyn } = require("./../models/utilitykjyn");
-const { modelUtilityKjyn } = require("./../models/utilitykjyn/kpi_utility");
-const { apiResponse } = require("./../traits/api-response");
+var utilKjyn = require('./../models/utilitykjyn');
+var modelUtilityKjyn = require("../models/utilitykjyn/kpi_utility");
+var apiResponse = require("./../traits/api-response");
 const { QueryTypes } = require("sequelize");
-const { connectUtilityKjyn } = require("./../config/connection");
+const { connectUtilityKjyn } = require('./../config/connection');
 
 exports.testData = async (req, res) => {
   const response = await connectUtilityKjyn.query(
@@ -21,8 +21,8 @@ exports.getKpiUtility = async (req, res) => {
         modelUtilityKjyn.findAllData()
     );
     
-    apiResponse.success(res, response, 200);
-  } catch (error) {
-    apiResponse.error(res, error.message, 500);
+    apiResponse.success(res, response, 200)
+  } catch(e){
+    apiResponse.errors(res, e.message, 500)
   }
 };

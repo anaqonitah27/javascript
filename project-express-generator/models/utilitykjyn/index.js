@@ -1,4 +1,4 @@
-const { SELECT, INSERT, UPDATE, DELETE } = require("./../../traits/query-types");
+const { SELECT, INSERT, UPDATE, DELETE } = require("../../traits/query-types");
 const connect = require("../../config/connection");
 
 exports.select = async (query) => {
