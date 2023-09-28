@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var kpiRouter = require('./routes/utilitykjyn');
 var kpiSchedule = require('./routes/routeSchedule');
+var cronJob = require('./cronjobs')
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', kpiRouter);
 app.use('/schedule', kpiSchedule);
+cronJob.runScheduler()
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
